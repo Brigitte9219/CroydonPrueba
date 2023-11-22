@@ -24,4 +24,22 @@ public class PersonajeServiceImpl implements IPersonajeService {
         ArrayList<Personaje> personajes = (ArrayList<Personaje>) personajeRepository.findAll();
         return personajes;
     }
+
+    @Override
+    public Personaje actualizarPersonaje(Integer id, Personaje nuevoPersonaje) {
+        Personaje personajeExistente = personajeRepository.findById(id).orElse(null);
+
+        if (personajeExistente != null) {
+
+            personajeExistente.setNombre(nuevoPersonaje.getNombre());
+            personajeExistente.setTvShow(nuevoPersonaje.getTvShow());
+            personajeExistente.setFoto(nuevoPersonaje.getFoto());
+
+
+            return personajeRepository.save(personajeExistente);
+        } else {
+
+            return null;
+        }
+    }
 }

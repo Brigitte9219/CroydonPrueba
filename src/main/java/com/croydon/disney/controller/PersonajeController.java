@@ -26,4 +26,9 @@ public class PersonajeController {
         ArrayList<Personaje> personajes =  personajeService.getAllPersonaje();
         return personajes;
     }
+
+    @PutMapping("/{id}")
+    public Personaje actualizarPersonaje(@PathVariable Integer id, @RequestBody Personaje nuevoPersonaje) {
+        return personajeService.actualizarPersonaje(id, nuevoPersonaje);
+    }
 }

@@ -9,4 +9,6 @@ public interface IPersonajeService {
     Personaje guardarPersonaje (Personaje personaje);
 
     ArrayList<Personaje> getAllPersonaje();
+
+    Personaje actualizarPersonaje(Integer id, Personaje nuevoPersonaje);
 }
