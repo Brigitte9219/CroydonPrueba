@@ -15,6 +15,11 @@ public class PersonajeServiceImpl implements IPersonajeService {
     private PersonajeRepository personajeRepository;
 
     @Override
+    public Personaje guardarPersonaje (Personaje personaje){
+        return personajeRepository.save(personaje);
+    }
+
+    @Override
     public ArrayList<Personaje> getAllPersonaje() {
         ArrayList<Personaje> personajes = (ArrayList<Personaje>) personajeRepository.findAll();
         return personajes;
