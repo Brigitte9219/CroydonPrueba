@@ -35,4 +35,9 @@ public class PersonajeController {
     @DeleteMapping(path = "{id}")
     public void eliminar(@PathVariable("id") Integer idpersonaje) {personajeService.borrarPersonaje(idpersonaje);
     }
+
+    @GetMapping("/{id}")
+    public Personaje getIdPersonaje(@PathVariable Integer id) {
+        return personajeService.getIdPersonaje(id);
+    }
 }

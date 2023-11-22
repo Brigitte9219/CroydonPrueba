@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class PersonajeServiceImpl implements IPersonajeService {
@@ -46,5 +47,25 @@ public class PersonajeServiceImpl implements IPersonajeService {
     @Override
     public void borrarPersonaje(Integer idpersonaje) {
         personajeRepository.deleteById(idpersonaje);
+    }
+
+    @Override
+    public Personaje getIdPersonaje(Integer id) {
+
+        Optional<Personaje> optionalPersonaje = personajeRepository.findById(id);
+
+        if (optionalPersonaje.isPresent()) {
+
+            Personaje personajeExistente = optionalPersonaje.get();
+
+            String nombre = personajeExistente.getNombre();
+            String tvShow = personajeExistente.getTvShow();
+            String foto = personajeExistente.getFoto();
+
+            return personajeExistente;
+        } else {
+
+            return null;
+        }
     }
 }

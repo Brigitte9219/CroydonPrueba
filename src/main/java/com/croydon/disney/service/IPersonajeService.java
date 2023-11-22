@@ -13,4 +13,6 @@ public interface IPersonajeService {
     Personaje actualizarPersonaje(Integer id, Personaje nuevoPersonaje);
 
     void borrarPersonaje(Integer idpersonaje);
+
+    Personaje getIdPersonaje(Integer id);
 }
