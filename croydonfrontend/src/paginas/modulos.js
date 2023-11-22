@@ -1,10 +1,10 @@
 import React from "react";
+import Menu from "../componentes/Menu";
 
 function Modulos(){
     return(
         <div>
-            <h1>Probando</h1>
-            <button>Presiona</button>
+            <Menu />
         </div>
     );
 }
