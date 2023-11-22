@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "../componentes/Card";
 import Menu from "../componentes/Menu";
+import '../estilos/Inicio.css';
 
 function Inicio(){
     return(
-        <div>
+        <div className="contenedor">
             <Menu />
+            <div className="contenedor-cards">
             <div>
                 <Card
                 url="Arianna"
@@ -37,6 +39,7 @@ function Inicio(){
                 nombre="Queen Arianna"
                 titulo="Background information"
                 informacion="Princesa" />
+            </div>
             </div>
         </div>
     );
