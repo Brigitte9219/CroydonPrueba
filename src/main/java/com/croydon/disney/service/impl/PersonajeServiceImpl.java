@@ -42,4 +42,9 @@ public class PersonajeServiceImpl implements IPersonajeService {
             return null;
         }
     }
+
+    @Override
+    public void borrarPersonaje(Integer idpersonaje) {
+        personajeRepository.deleteById(idpersonaje);
+    }
 }

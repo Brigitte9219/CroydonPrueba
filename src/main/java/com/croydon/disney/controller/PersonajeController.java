@@ -31,4 +31,8 @@ public class PersonajeController {
     public Personaje actualizarPersonaje(@PathVariable Integer id, @RequestBody Personaje nuevoPersonaje) {
         return personajeService.actualizarPersonaje(id, nuevoPersonaje);
     }
+
+    @DeleteMapping(path = "{id}")
+    public void eliminar(@PathVariable("id") Integer idpersonaje) {personajeService.borrarPersonaje(idpersonaje);
+    }
 }

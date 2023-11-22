@@ -11,4 +11,6 @@ public interface IPersonajeService {
     ArrayList<Personaje> getAllPersonaje();
 
     Personaje actualizarPersonaje(Integer id, Personaje nuevoPersonaje);
+
+    void borrarPersonaje(Integer idpersonaje);
 }
